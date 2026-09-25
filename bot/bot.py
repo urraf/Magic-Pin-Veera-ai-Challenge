@@ -146,11 +146,11 @@ async def tick(body: TickRequest):
             logger.debug(f"Trigger {trigger_id} has no merchant_id, skipping")
             continue
 
-            if tracker.is_merchant_suppressed(merchant_id):
+        if tracker.is_merchant_suppressed(merchant_id):
             logger.info(f"Merchant {merchant_id} suppressed, skipping {trigger_id}")
             continue
 
-            sup_key = trigger.get("suppression_key", "")
+        sup_key = trigger.get("suppression_key", "")
         dedup_key = f"{merchant_id}:{sup_key}"
         if dedup_key in _sent_suppression_keys:
             logger.info(f"Already sent {sup_key} to {merchant_id}, skipping")
