@@ -68,13 +68,13 @@ async def healthz():
 @app.get("/v1/metadata")
 async def metadata():
     return {
-        "team_name": "magicpin",
+        "team_name": "Nahraf",
         "team_members": ["Farhan"],
         "model": "llama-3.3-70b-versatile (via Groq)",
         "approach": "4-context LLM composer with trigger-kind dispatch, "
                     "rule-based intent detection (auto-reply/hostile/commitment), "
                     "and category-voice-matched prompts",
-        "contact_email": "vera@magicpin.com",
+        "contact_email": "farhan.ug23@nsut.ac.in",
         "version": "1.0.0",
         "submitted_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
